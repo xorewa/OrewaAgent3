@@ -1,0 +1,30 @@
+# OrewaAgent3 — default model: MiMo v2.5 Pro. Pick any model from the panel's
+# model picker; the active model just starts from here. setup-orewa.sh copies
+# this to ~/.orewa3/config.yaml on first install. Put the API key in
+# ~/.orewa3/.env  ->  XIAOMI_API_KEY=...
+
+model:
+  default: mimo-v2.5-pro
+  provider: xiaomi
+  base_url: https://token-plan-sgp.xiaomimimo.com/v1
+
+agent:
+  max_turns: 150
+  reasoning_effort: medium
+
+# Per-provider request timeout — the real fix for slow-model API timeouts.
+providers:
+  xiaomi:
+    request_timeout_seconds: 1800   # 30 min
+    stale_timeout_seconds: 300      # abort only if no data for 5 min
+
+streaming:
+  enabled: true
+
+terminal:
+  timeout: 600
+code_execution:
+  timeout: 600
+  max_tool_calls: 200
+delegation:
+  max_iterations: 200
