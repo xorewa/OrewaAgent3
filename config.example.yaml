@@ -19,7 +19,7 @@ providers:
     stale_timeout_seconds: 300      # abort only if no data for 5 min
 
 streaming:
-  enabled: true
+  enabled: false                 # MiMo/Xiaomi endpoint hangs with streaming on — keep OFF
 
 terminal:
   timeout: 600
