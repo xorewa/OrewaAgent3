@@ -19,3 +19,12 @@ code_execution:
   max_tool_calls: 200
 delegation:
   max_iterations: 200
+# Auxiliary vision provider — enables vision_analyze for models without native
+# vision (e.g. mimo-v2.5-pro). Falls back to OpenRouter Gemini Flash for image
+# analysis. 'auto' picks best available: OpenRouter -> Nous Portal -> main endpoint.
+auxiliary:
+  vision:
+    provider: "auto"
+    model: ""
+    timeout: 30
+    download_timeout: 30
